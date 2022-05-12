@@ -22,11 +22,10 @@ I purposely left the other parts in order to let other people contribute and als
 add other functionalities to the modules (which would be really great)
 
 # How To Contribute:
-Step 1: Fork the project repository
-Step 3: Clone your fork 
-Step 4: Create a branch 
-Step 5: Push changes to GitHub
-Step 6: Submit your changes for review ( you need just to create a Pull Request)
+- Step 1: Fork the project repository
+- Step 3: Clone your fork 
+- Step 4: Create a branch 
+- Step 5: Push changes to GitHub
+- Step 6: Submit your changes for review ( you need just to create a Pull Request)
 
-If you have found this project helpul for you, you can a Start.
-You can create an issue if you have any 
+If you have found this project helpul for you, you can a Start. 
