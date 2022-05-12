@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_form_inherit" model="ir.ui.view">
+            <field name="name">student.res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field name="student"/>
+                </xpath>
+                <xpath expr="//field[@name='parent_id']" position="before">
+                    <field name="father_name" placeholder="Father name"/>
+                    <field name="surname" placeholder="Surname"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="res_partner_list_inherit" model="ir.ui.view">
+            <field name="name">student.res.partner.list</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='display_name']" position="after">
+                    <field name="father_name"/>
+                    <field name="surname"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="res_partner_kanban_inherit" model="ir.ui.view">
+            <field name="name">student.res.partner.kanban</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='parent_id']" position="after">
+                    <field name="father_name"/>
+                    <field name="surname"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="student_search_inherit" model="ir.ui.view">
+            <field name="name">student.student.search</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <filter string="Student" name="student" domain="[('student', '=', True)]"/>
+	            </xpath>
+            </field>
+        </record>
+        <record id="action_student" model="ir.actions.act_window">
+            <field name="name">Students</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="base.view_partner_tree"/>
+            <field name="context">{"search_default_student":1}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Student.
+                </p>
+            </field>
+        </record>
+        <menuitem name="Students" id="student_menu" groups="base.group_user" parent="contacts.menu_contacts" action="action_student" sequence="1"/>
+    </data>
+</odoo>
