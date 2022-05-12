@@ -28,4 +28,4 @@ add other functionalities to the modules (which would be really great)
 - Step 5: Push changes to GitHub
 - Step 6: Submit your changes for review ( you need just to create a Pull Request)
 
-If you have found this project helpul for you, you can a Start. 
+If you have found this project helpul for you, you can let a Start. 
