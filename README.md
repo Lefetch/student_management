@@ -1,5 +1,5 @@
 # Student Management
-This is an odoo module for a job test of a company received by a friend in version 15.
+This is an odoo module of a company for a job test received by a friend in version 15.
 
 # This is the different Requiment of the Company:
   - create new module for student_management (1)
